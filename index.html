@@ -65,6 +65,43 @@
             line-height: 1.5;
             margin: 10px auto; /* Centraliza o texto */
         }
+
+        .heart {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            margin: 20px auto; /* Centraliza o coração */
+            transform: rotate(45deg); /* Girando o coração para a posição correta */
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart::after {
+            top: 0;
+            left: -25px;
+        }
+
+        #extra-text {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -77,6 +114,8 @@
             <img src="WhatsApp Image 2024-12-01 at 23.00.25.jpeg" alt="Foto 4">
         </div>
         <p id="caption">Você é o amor da minha vida</p>
+        <div class="heart"></div> <!-- Coração -->
+        <p id="extra-text">Só pra te lembrar que te amo muito</p>
     </div>
 
     <script>
