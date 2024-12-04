@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Com Amor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(186, 107, 206);
+            color: #fff;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            padding: 20px;
+            position: relative;
+        }
+
+        #slideshow {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            border: 3px solid #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            margin: 0 auto; /* Centraliza o slideshow */
+        }
+
+        #slideshow img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        #slideshow img.active {
+            opacity: 1;
+        }
+
+        #caption {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px 15px;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 80%;
+            line-height: 1.5;
+            margin: 10px auto; /* Centraliza o texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Com Amor</h1>
+        <div id="slideshow">
+            <img src="WhatsApp Image 2024-12-01 at 22.58.20.jpeg" alt="Foto 1" class="active">
+            <img src="WhatsApp Image 2024-12-01 at 22.59.31.jpeg" alt="Foto 2">
+            <img src="WhatsApp Image 2024-12-01 at 23.00.25 (1).jpeg" alt="Foto 3">
+            <img src="WhatsApp Image 2024-12-01 at 23.00.25.jpeg" alt="Foto 4">
+        </div>
+        <p id="caption">Você é o amor da minha vida</p>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('#slideshow img');
+        const captions = [
+            "Eu te amo daqui até a lua",
+            "Sempre irei segurar sua mão",
+            "Vou cuidar de você pra sempre",
+            "E você é minha melhor escolha",
+        ];
+        const captionElement = document.getElementById('caption');
+
+        function changeImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+            captionElement.textContent = captions[currentIndex];
+        }
+
+        setInterval(changeImage, 3000);
+    </script>
+</body>
+</html>
